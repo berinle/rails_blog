@@ -1,12 +1,12 @@
 apiVersion: carto.run/v1alpha1
 kind: Workload
 metadata:
-  name: rails-app
+  name: rails-blog
   labels:
     apps.tanzu.vmware.com/workload-type: web
     apps.tanzu.vmware.com/has-tests: "false"
     apps.tanzu.vmware.com/auto-configure-actuators: "true"
-    app.kubernetes.io/part-of: rails-app
+    app.kubernetes.io/part-of: rails-blog
 spec:
   params:
   - name: annotations
@@ -14,6 +14,6 @@ spec:
       autoscaling.knative.dev/minScale: "1"
   source:
     git:
-      url: https://github.com/JetBrains/sample_rails_app
+      url: https://github.com/berinle/rails_blog.git
       ref:
-        branch: master
+        branch: main
