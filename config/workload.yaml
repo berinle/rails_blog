@@ -8,6 +8,14 @@ metadata:
     apps.tanzu.vmware.com/auto-configure-actuators: "true"
     app.kubernetes.io/part-of: rails-blog
 spec:
+  build:
+    env:
+      - name: BP_MRI_VERSION
+        value: 3.2.*
+
+  env:
+    - name: SECRET_KEY_BASE
+      value: blah
   params:
   - name: annotations
     value:
